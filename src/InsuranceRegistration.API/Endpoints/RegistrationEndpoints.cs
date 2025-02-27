@@ -13,14 +13,27 @@ public class RegistrationEndpoints : CarterModule
 
     public override void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapPost("/register-policy-holder", async (RegisterPolicyHolderRequest request, IPolicyHolderService policyHolderService) => {
-            await policyHolderService.RegisterPolicyHolderAsync(request.FirstName, request.Surname, request.PolicyReferenceNumber, request.Email, request.Dob);
-            
-            return TypedResults.Ok();
+        app.MapPost("/policy-holder", async (
+            RegisterPolicyHolderRequest request, 
+            IPolicyHolderService policyHolderService, 
+            IValidator<RegisterPolicyHolderRequest> validator) =>
+        {
+            var validationResult = await validator.ValidateAsync(request);
+            if (!validationResult.IsValid)
+            {
+                return TypedResults.ValidationProblem(validationResult.ToDictionary());
+            }
+
+            var result = await policyHolderService.RegisterPolicyHolderAsync(request.FirstName, request.Surname, request.PolicyReferenceNumber, request.Email, request.Dob);
+
+            return Results.Ok(new RegisterPolicyHolderResponse
+            {
+                PolicyHolderId = result
+            });
         })
-        .WithName("RegisterPolicyHolder")
+        .WithName("Register Policy Holder")
         .WithDescription("Registers a customer (policy holder) with the AFI customer portal.")
-        .Produces<RegisterPolicyHolderResponse>(StatusCodes.Status201Created)
+        .Produces<RegisterPolicyHolderResponse>(StatusCodes.Status200OK)
         .ProducesProblem(StatusCodes.Status400BadRequest)
         .ProducesProblem(StatusCodes.Status500InternalServerError);
     }

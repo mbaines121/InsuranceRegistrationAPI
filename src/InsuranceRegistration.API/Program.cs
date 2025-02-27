@@ -1,6 +1,7 @@
 using InsuranceRegistration.API.Data;
+using InsuranceRegistration.API.Requests;
+using InsuranceRegistration.API.Validators;
 using InsuranceRegistration.Services;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,6 +28,8 @@ builder.Services.AddSwaggerGen(options => {
     });
 });
 
+builder.Services.AddScoped<IValidator<RegisterPolicyHolderRequest>, RegisterPolicyHolderRequestValidator>();
+
 var app = builder.Build();
 
 app.MapDefaultEndpoints();
@@ -49,7 +52,6 @@ if (app.Environment.IsDevelopment())
     {
         options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
         options.RoutePrefix = string.Empty;
-
     });
 }
 
