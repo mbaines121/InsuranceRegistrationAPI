@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsuranceRegistration.AppHo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsuranceRegistration.API", "src\InsuranceRegistration.API\InsuranceRegistration.API.csproj", "{6F5AE211-EB86-477C-A8EF-BF39A8331137}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsuranceRegistration.Infrastructure", "InsuranceRegistration.Infrastructure\InsuranceRegistration.Infrastructure.csproj", "{C28271C6-84BE-4087-837A-6BA2C7782E14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsuranceRegistration.Services", "InsuranceRegistration.Services\InsuranceRegistration.Services.csproj", "{7B0027E6-2BAA-4A44-B471-F30C31A6CE41}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,14 @@ Global
 		{6F5AE211-EB86-477C-A8EF-BF39A8331137}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F5AE211-EB86-477C-A8EF-BF39A8331137}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F5AE211-EB86-477C-A8EF-BF39A8331137}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C28271C6-84BE-4087-837A-6BA2C7782E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C28271C6-84BE-4087-837A-6BA2C7782E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C28271C6-84BE-4087-837A-6BA2C7782E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C28271C6-84BE-4087-837A-6BA2C7782E14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B0027E6-2BAA-4A44-B471-F30C31A6CE41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B0027E6-2BAA-4A44-B471-F30C31A6CE41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B0027E6-2BAA-4A44-B471-F30C31A6CE41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B0027E6-2BAA-4A44-B471-F30C31A6CE41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,5 +51,7 @@ Global
 		{11A2F867-608A-4C8E-B159-45A76A1DF137} = {BE9C52FB-3AA4-41F1-BCBA-992D1BA847A7}
 		{9EC9E6C5-8A39-47B3-AB2F-621F992786F5} = {BE9C52FB-3AA4-41F1-BCBA-992D1BA847A7}
 		{6F5AE211-EB86-477C-A8EF-BF39A8331137} = {BE9C52FB-3AA4-41F1-BCBA-992D1BA847A7}
+		{C28271C6-84BE-4087-837A-6BA2C7782E14} = {BE9C52FB-3AA4-41F1-BCBA-992D1BA847A7}
+		{7B0027E6-2BAA-4A44-B471-F30C31A6CE41} = {BE9C52FB-3AA4-41F1-BCBA-992D1BA847A7}
 	EndGlobalSection
 EndGlobal
