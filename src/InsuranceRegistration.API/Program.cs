@@ -12,6 +12,7 @@ builder.AddSqlServerDbContext<ApplicationDbContext>(connectionName: "InsuranceRe
 builder.Services.AddServices();
 builder.Services.AddCarter();
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddProblemDetails();
 builder.Services.AddSwaggerGen(options => {
     options.SwaggerDoc("v1", new OpenApiInfo
     {
