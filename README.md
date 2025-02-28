@@ -24,9 +24,11 @@ If there's any issues with getting up and running I'd be happy to take a look.
 
 The database can be accessed with Azure Data Studio. The connection string can be obtained from the Aspire Dashboard under the `insuranceregistration-api`.
 
-If there is an issue logging in as 'SA', you may need to make sure that any local instances of SQL Server have been stopped first.resource.
+If there is an issue logging in as 'SA', you may need to make sure that any local instances of SQL Server have been stopped first.
 
 ## Design Decisions
+
+I called the URI and model 'policy holder' instead of 'customer', as it seems likely that there will also be other customer types and wanted to be more deliberate about what type of customer we are working with in this application.
 
 I used Aspire so that the SQL Server database could easily be included and set up with the API with no external configuration or setup required.
 
@@ -40,6 +42,7 @@ The following areas could be improved but were kept simple in this case due to t
 
 * Improve `PolicyHolderService` with exception handling and/or a complex return object.
 * The POST API endpoint needs integration tests.
+* Improve global exception handling. Currently we use ProblemDetails to catch global errors and return a ProblemDetail type response.
 
 
 
