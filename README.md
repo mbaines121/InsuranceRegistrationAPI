@@ -36,6 +36,8 @@ The project architecture was kept "as simple as possible, but no simpler". It's 
 
 If it were to grow significantly then the N-tier approach would probably be easier to refactor.
 
+When working on the email validator, I considered that Microsoft recommends in .NET not to validate an email into a specific format, but to only check for the existence of an '@' character, and validate it with an email to the address owner. I added a regex to check the format against the spec, but also added a rule to allow the '.' character in the first part of the email.
+
 ## Next Steps
 
 The following areas could be improved but were kept simple in this case due to time constraints:
